@@ -173,19 +173,27 @@
     max-width: none;
   }
   .card{
+    --card-accent: #008feb;
     background: #fff;
     border: 1px solid var(--line);
+    border-top: 3px solid var(--card-accent);
     border-radius: 18px;
     padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
   }
-  .card .dot{
-    width: 40px; height: 40px;
-    border-radius: 12px;
-    background: var(--sky);
-    margin-bottom: 16px;
+  .card:nth-child(2){
+    --card-accent: #72a310;
   }
-  .card:nth-child(2) .dot{ background: var(--leaf); }
-  .card:nth-child(3) .dot{ background: #c9407a; }
+  .card:nth-child(3){
+    --card-accent: #2797af;
+  }
+  .card-logo{
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 18px;
+  }
   .card h4{
     font-family:'Baloo 2', sans-serif;
     font-size: 1.2rem;
@@ -195,6 +203,27 @@
     font-size: 0.98rem;
     color: var(--ink-soft);
     margin:0;
+    flex: 1;
+  }
+  .card-cta{
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 24px;
+    padding: 9px 18px;
+    border: 2px solid var(--card-accent);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--card-accent);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1.2;
+    transition: color .15s ease, background .15s ease;
+  }
+  .card-cta:hover,
+  .card-cta:focus-visible{
+    background: var(--card-accent);
+    color: #fff;
   }
 
   /* ---------- Join / CTA ---------- */
@@ -301,19 +330,22 @@
 
     <div class="cards">
       <div class="card">
-        <div class="dot"></div>
+        <img class="card-logo" src="assets/logos/ces.png" alt="" width="64" height="64">
         <h4>Community Exchange System</h4>
         <p>Founded in 2003, CES is the oldest and largest of the three organisations. Its current software is tried and tested — the new CEN platform will carry that experience forward for a mobile-first generation.</p>
+        <a class="card-cta" href="https://www.community-exchange.org/home/join/" target="_blank" rel="noopener noreferrer">Sign up</a>
       </div>
       <div class="card">
-        <div class="dot"></div>
+        <img class="card-logo" src="assets/logos/komunitin.svg" alt="" width="64" height="64">
         <h4>Komunitin</h4>
         <p>An open-source app combining a local community currency wallet with a marketplace, making it easy for a decentralised set of local currencies to trade with one another.</p>
+        <a class="card-cta" href="https://komunitin.org/" target="_blank" rel="noopener noreferrer">Sign up</a>
       </div>
       <div class="card">
-        <div class="dot"></div>
+        <img class="card-logo" src="assets/logos/timeoverflow.png" alt="" width="64" height="64">
         <h4>TimeOverflow</h4>
         <p>Open-source software built by volunteers to run the everyday work of time banks — helping administrators manage members and connecting people across the bank.</p>
+        <a class="card-cta" href="https://www.timeoverflow.org/" target="_blank" rel="noopener noreferrer">Sign up</a>
       </div>
     </div>
   </div>
