@@ -318,23 +318,16 @@ nav.links a:hover::after { width: 100%; }
 		align-items: flex-start;
 		gap: 2px;
 	}
-
-	.brand div {
-		font-family: 'Baloo 2', sans-serif;
-		font-weight: 700;
-		font-size: 1.4rem;
-		letter-spacing: -0.3px;
-		background: linear-gradient(135deg, var(--sky-deep), var(--leaf));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+	
+	.brand div { 
+		padding: 6px 0 0 10px;
+		font-size: 1.1rem;
+		line-height: 1.2;
 	}
-
-	.brand img {
+	.brand img { 
 		height: 32px;
-		width: auto;
 	}
-
+	
 	/* FIX: Make cards stack vertically on mobile */
 	.cards { 
 		grid-template-columns: 1fr !important;
@@ -365,7 +358,7 @@ nav.links a:hover::after { width: 100%; }
 
 /* ----- Rest of the styles ----- */
 .section {
-	padding: 84px 0;
+	padding: 64px 0;
 	border-top: 1px solid var(--line);
 }
 .section.alt {
@@ -382,7 +375,6 @@ nav.links a:hover::after { width: 100%; }
 	color: var(--sky-deep);
 	font-weight: 700;
 	font-family: 'Nunito Sans', sans-serif;
-	margin-top: 6px;
 	margin-bottom: 6px;
 }
 .section h3.headline {
@@ -480,12 +472,6 @@ footer .heart {
 	padding: 56px 0 32px;
 	text-align: center;
 	border-bottom: 1px solid var(--line);
-	
-	/* Combine gradient and image in one declaration */
-	background: linear-gradient(to bottom, #aefffa, #0cb3d9);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 	height: 100vh;
 	min-height: 500px;
 }
@@ -508,9 +494,8 @@ footer .heart {
 	color: var(--ink-soft);
 	background: rgba(255,255,240,0.8);
 	padding: 0 12px;
-	border: 1px solid #10677a;
+	border: 1px solid #ccc;
 	border-radius: 40px;
-	box-shadow: 0 8px 8px rgba(0,0,0,0.20);
 }
 .hero-logo {
 	margin: 20px auto 20px;
@@ -524,7 +509,7 @@ footer .heart {
 }
 
 .lede {
-	padding: 18px 0 12px;
+	padding: 28px 0 12px;
 	background: var(--cream-deep);
 }
 .lede .map-wrap {
@@ -547,37 +532,23 @@ footer .heart {
 </style>
 </head>
 <body>
-<!-- GTranslate Widget Start -->
-<div class="gtranslate_wrapper"></div>
-<script>
-  window.gtranslateSettings = {
-    "default_language": "en",
-    "languages": ["en", "es", "fr", "de", "el", "it", "zh-CN", "zh-TW", "ja", "fi", "ro"],
-    "wrapper_selector": ".gtranslate_wrapper",
-    "switcher_horizontal_position": "right",
-    "switcher_vertical_position": "bottom",
-    "alt_flags": { "en": "usa" }
-  };
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-<!-- GTranslate Widget End -->
+
 <header>
 	<div class="wrap nav-row">
 		<div class="brand">
 			<a href="#" title="Home">
-				<div style="float:left"><img src="assets/logos/cen-mini.png" alt="CEN logo">&nbsp;</div>
+				<div style="float:left"><img src="assets/logos/cen-mini.png" alt="CEN logo">&nbsp;&nbsp;</div>
 				<div style="float:left">Community Exchange Network</div>
 			</a>
 		</div>
-		
+
 		<!-- Desktop navigation -->
 		<nav class="links">
-			<a href="#map">Map</a>
 			<a href="#about">About</a>
 			<a href="#services">Services</a>
 			<a href="#network">Network</a>
 		</nav>
-		
+
 		<!-- Desktop Contact button -->
 		<a class="btn btn-solid" href="#join">Contact Us</a>
 
@@ -593,7 +564,6 @@ footer .heart {
 <!-- Mobile menu overlay -->
 <div class="mobile-menu" id="mobileMenu">
 	<a href="#" class="mobile-link">Home</a>
-	<a href="#map" class="mobile-link">Map</a>
 	<a href="#about" class="mobile-link">About</a>
 	<a href="#services" class="mobile-link">Services</a>
 	<a href="#network" class="mobile-link">Network</a>
@@ -610,17 +580,14 @@ footer .heart {
 	</div>
 </section>
 
-<!-- Map section -->
-<section class="section" id="map">
-	<div class="lede">
-		<div class="wrap">
-			<h2 class="kicker" style="margin-top:0; padding-bottom:10px">Community Exchange Network map</h2>
-			<div class="map-wrap">
-				<iframe src="https://analytics.community-exchange.org/murmurations/index.html" loading="lazy" title="Community Exchange Network map"></iframe>
-			</div>
+<!-- map section -->
+<div class="lede">
+	<div class="wrap">
+		<div class="map-wrap">
+			<iframe src="https://analytics.community-exchange.org/murmurations/index.html" loading="lazy" title="Community Exchange Network map"></iframe>
 		</div>
 	</div>
-</section>
+</div>
 
 <!-- About -->
 <section class="section" id="about">
