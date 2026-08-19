@@ -323,7 +323,6 @@ nav.links a:hover::after { width: 100%; }
 		font-family: 'Baloo 2', sans-serif;
 		font-weight: 700;
 		font-size: 1.1rem;
-		padding-top: 4px;
 		letter-spacing: -0.5px;
 		background: linear-gradient(135deg, var(--sky-deep), var(--leaf));
 		-webkit-background-clip: text;
@@ -331,6 +330,8 @@ nav.links a:hover::after { width: 100%; }
 		background-clip: text;
 	}
 
+	.brand #cen {padding-top: 4px;}
+	
 	.brand img {
 		height: 32px;
 		width: auto;
@@ -567,7 +568,7 @@ footer .heart {
 		<div class="brand">
 			<a href="#" title="Home">
 				<div style="float:left"><img src="assets/logos/cen-mini.png" alt="CEN logo">&nbsp;</div>
-				<div style="float:left" translate="no">Community Exchange Network</div>
+				<div style="float:left" id="cen" translate="no">Community Exchange Network</div>
 			</a>
 		</div>
 		
