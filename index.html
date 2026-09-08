@@ -716,6 +716,26 @@ footer .heart {
 	</div>
 </section>
 
+<!-- Newsletter signup (posts to Listmonk) -->
+<section class="section alt" id="newsletter">
+	<div class="wrap section-inner">
+		<h2 class="kicker">Stay in touch</h2>
+		<h3 class="headline">Subscribe to the CEN newsletter</h3>
+		<p>Occasional updates on the network, new communities, and the tools we're building. You'll get an email to confirm — unsubscribe anytime.</p>
+
+		<form class="newsletter-form" method="post" action="https://newsletter.community-exchange.org/subscription/form">
+			<input type="hidden" name="nonce" />
+			<!-- Replace both UUIDs with the real ones from Lists → Forms -->
+			<input type="hidden" name="l" value="50b0c99f-f8e3-419b-9a3f-1cd5a6dd1bf7" />
+			<input type="hidden" name="l" value="6ab35622-3c49-440f-aca7-bac013fc8d19" />
+			<div class="newsletter-row">
+				<input type="email" name="email" required placeholder="you@example.org" aria-label="Email address" />
+				<button class="btn btn-solid" type="submit">Subscribe</button>
+			</div>
+		</form>
+	</div>
+</section>
+	
 <!-- CTA -->
 <section class="cta" id="join">
 	<div class="wrap">
