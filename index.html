@@ -547,6 +547,23 @@ footer .heart {
 	height: 440px;
 	border: 0;
 }
+.newsletter-form { margin-top: 20px; max-width: 540px; }
+.newsletter-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.newsletter-row input[type="email"] {
+	flex: 1;
+	min-width: 220px;
+	padding: 12px 20px;
+	border: 2px solid var(--line);
+	border-radius: 999px;
+	font: inherit;
+	background: #fff;
+	color: var(--ink);
+}
+.newsletter-row input[type="email"]:focus {
+	outline: none;
+	border-color: var(--sky-deep);
+}
+.newsletter-form button { font: inherit; cursor: pointer; }
 </style>
 </head>
 <body>
