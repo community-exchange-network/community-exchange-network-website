@@ -58,38 +58,32 @@ h1, h2, h3 {
 /* ----- header with softer shadow ----- */
 header {
 	background: rgba(251, 243, 231, 0.85);
+	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	border-bottom: 1px solid var(--line);
-	padding: 18px 0 14px;
+	padding: 15px 0 14px;
 	position: sticky;
 	top: 0;
 	z-index: 10;
 	transition: background 0.2s;
 }
+
 .nav-row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 24px;
 }
+
 .brand {
 	display: flex;
 	align-items: center;
-	gap: 8px;
 }
-.brand div {
-	font-family: 'Baloo 2', sans-serif;
-	font-weight: 700;
-	font-size: 1.4rem;
-	letter-spacing: -0.3px;
-	background: linear-gradient(135deg, var(--sky-deep), var(--leaf));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-}
+
 .brand img {
 	height: 50px;
 	width: auto;
+	display: block;
 }
 
 /* ----- Desktop navigation ----- */
@@ -240,6 +234,7 @@ nav.links a:hover::after { width: 100%; }
 .card {
 	--card-accent: #008feb;
 	background: #ffffffd9;
+	-webkit-backdrop-filter: blur(2px);
 	backdrop-filter: blur(2px);
 	border: 1px solid var(--line);
 	border-top: 4px solid var(--card-accent);
@@ -329,19 +324,6 @@ nav.links a:hover::after { width: 100%; }
 		gap: 2px;
 	}
 
-	.brand div {
-		font-family: 'Baloo 2', sans-serif;
-		font-weight: 700;
-		font-size: 1.1rem;
-		letter-spacing: -0.5px;
-		background: linear-gradient(135deg, var(--sky-deep), var(--leaf));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
-
-	.brand #cen {padding-top: 4px;}
-	
 	.brand img {
 		height: 63px;
 		width: 300px;
@@ -403,7 +385,7 @@ nav.links a:hover::after { width: 100%; }
 	color: var(--sky-deep);
 	font-weight: 700;
 	font-family: 'Nunito Sans', sans-serif;
-	margin-top: 6px;
+	margin-top: 12px;
 	margin-bottom: 6px;
 }
 .section h3.headline {
@@ -415,6 +397,39 @@ nav.links a:hover::after { width: 100%; }
 	max-width: 700px;
 	font-size: 1.08rem;
 	color: var(--ink-soft);
+}
+
+/* Partner logos: 2 columns on desktop, 1 column on narrow screens */
+.partners {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px 32px;
+	margin-top: 20px;
+	align-items: center;
+	justify-items: center;
+}
+
+.partner {
+	display: block;
+	transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.partner img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.partner:hover {
+	transform: translateY(-2px);
+	opacity: 0.9;
+}
+
+@media (max-width: 560px) {
+	.partners {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
 }
 
 .source-code {
@@ -498,17 +513,37 @@ footer .heart {
 }
 
 .hero {
-	padding: 56px 0 32px;
+	padding: 0 0 80px 0;
 	text-align: center;
 	border-bottom: 1px solid var(--line);
-	
-	/* Combine gradient and image in one declaration */
-	background: linear-gradient(to bottom, #aefffa, #0cb3d9);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	/*background: linear-gradient(to bottom, rgba(174, 255, 250, 0.5), rgba(12, 179, 217, 0.5)),*/
+	background: url("assets/images/cenhp.png") center / cover no-repeat;
 	height: 100vh;
-	min-height: 500px;
+	min-height: 560px;
+	display: flex;
+	flex-direction: column;
+}
+
+.hero .wrap {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	width: 100%;
+	justify-content: flex-end;   /* push content to bottom */
+	padding-bottom: 28px;
+}
+
+.hero .sub {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: var(--ink-soft);
+	background: rgba(255, 255, 240, 0.85);
+	padding: 6px 12px;
+	border: 1px solid #10677a;
+	border-radius: 40px;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.20);
 }
 
 .hero h1 {
@@ -520,28 +555,6 @@ footer .heart {
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	line-height: 1.1;
-}
-.hero .sub {
-	max-width: 800px;
-	margin: 24px auto 0;
-	font-size: 12pt;
-	font-weight: 600;
-	color: var(--ink-soft);
-	background: rgba(255,255,240,0.8);
-	padding: 0 12px;
-	border: 1px solid #10677a;
-	border-radius: 40px;
-	box-shadow: 0 8px 8px rgba(0,0,0,0.20);
-}
-.hero-logo {
-	margin: 20px auto 20px;
-	max-width: 320px;
-	filter: drop-shadow(0 6px 14px rgba(0,0,0,0.04));
-}
-.hero-logo img {
-	width: 100%;
-	height: auto;
-	display: block;
 }
 
 .lede {
@@ -559,12 +572,19 @@ footer .heart {
 .lede .map-wrap:hover {
 	transform: scale(1.002);
 }
+
+/*.lede iframe {
+	aspect-ratio: 16 / 10;
+	height: auto;
+}*/
+
 .lede iframe {
 	display: block;
 	width: 100%;
 	height: 440px;
 	border: 0;
 }
+
 .newsletter-form { margin-top: 20px; max-width: 540px; }
 .newsletter-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .newsletter-row input[type="email"] {
@@ -602,11 +622,11 @@ footer .heart {
 <header>
 	<div class="wrap nav-row">
 		<div class="brand">
-			<a href="#" title="Home">
-				<div style="float:left"><img src="assets/logos/cen50.png" alt="CEN logo">&nbsp;</div>
+			<a href="#" title="Home" aria-label="Community Exchange Network home">
+				<img src="assets/logos/cen50.png" alt="CEN logo">
 			</a>
 		</div>
-		
+
 		<!-- Desktop navigation -->
 		<nav class="links">
 			<a href="#map">Map</a>
@@ -639,11 +659,7 @@ footer .heart {
 
 <section class="hero">
 	<div class="wrap">
-		<h1 translate="no">Community Exchange Network</h1>
-		<div class="hero-logo">
-			<img src="assets/logos/cen5.png" alt="CEN logo" height="auto">
-		</div>
-		<p class="sub">🌱 Growing a worldwide network of community exchange, mutual aid, and local resilience</p>
+		<div class="sub">🌱 Growing a worldwide network of community exchange, mutual aid, and local resilience</div>
 	</div>
 </section>
 
@@ -653,7 +669,7 @@ footer .heart {
 		<div class="wrap">
 			<h2 class="kicker" style="margin-top:0; padding-bottom:10px"><span class="notranslate">Community Exchange Network</span>&nbsp;map</h2>
 			<div class="map-wrap">
-				<iframe src="https://analytics.community-exchange.org/murmurations/index.html" loading="lazy" title="Community Exchange Network map"></iframe>
+				<iframe src="https://analytics.community-exchange.org/murmurations/index.html" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Community Exchange Network map"></iframe>
 			</div>
 		</div>
 	</div>
@@ -696,18 +712,21 @@ footer .heart {
 		<p>We work to connect aligned networks, support open-source platform development, strengthen collaboration, and build shared infrastructure for a more cooperative and resilient economy.</p>
 	</div>
 	<div class="wrap section-inner">
-		<h2>Partner organisations</h3>
+		<h2>Partner organisations</h2>
 		<p>CEN works with several aligned organisations and service providers. Among them are:</p>
-		<table>
-			<tr>
-				<td style="padding-top:20px"><a href="https://adbdt.org/" target="_blank"><img src="assets/logos/adbdt-logo-300.png" title="Partnership for the Development of Time Banks (ADBdT)" alt="ADBdT logo"></a></td>
-				<td style="padding-top:20px"><a href="https://communityforge.net/en" target="_blank" translate="no" title="Community Forge" alt="Community Forge logo"><img src="assets/logos/logoHamlets-300.png"></a></td>
-			</tr>
-			<tr>
-				<td><a href="https://metaprovide.org/" target="_blank" translate="no"><img src="assets/logos/metaprovide-logo-300.png" title="MetaProvide" alt="MetaProvide logo"></a></td>
-				<td style="padding-top:15px"><a href="https://murmurations.network/" target="_blank" title="Murmurations" alt="Murmurations logo" translate="no"><img src="assets/logos/murmurations-logo-300.png"></a></td>
-			</tr>
-		</table>
+	<div class="partners">
+		<a class="partner" href="https://adbdt.org/" target="_blank" rel="noopener noreferrer">
+		    <img src="assets/logos/adbdt-logo-300.png" alt="ADBdT logo" title="Partnership for the Development of Time Banks (ADBdT)">
+		</a>
+		<a class="partner" href="https://communityforge.net/en" target="_blank" rel="noopener noreferrer" translate="no">
+		    <img src="assets/logos/logoHamlets-300.png" alt="Community Forge logo" title="Community Forge">
+		</a>
+		<a class="partner" href="https://metaprovide.org/" target="_blank" rel="noopener noreferrer" translate="no">
+		    <img src="assets/logos/metaprovide-logo-300.png" alt="MetaProvide logo" title="MetaProvide">
+		</a>
+		<a class="partner" href="https://murmurations.network/" target="_blank" rel="noopener noreferrer" translate="no">
+		    <img src="assets/logos/murmurations-logo-300.png" alt="Murmurations logo" title="Murmurations">
+		</a>
 	</div>
 </section>
 
@@ -738,14 +757,14 @@ footer .heart {
 	<div class="wrap">
 		<div class="section-inner">
 			<h2 class="kicker">The network today</h2>
-			<h3 class="headline">Three organisations, one growing ecosystem</h3>
-			<p>CEN currently brings together three participating organisations, each contributing distinct experience and communities to one growing ecosystem.</p>
+			<h3 class="headline">Four organisations, one growing ecosystem</h3>
+			<p>CEN currently brings together four participating organisations, each contributing distinct experience and communities to one growing ecosystem.</p>
 		</div>
 		<div class="cards">
 			<div class="card">
 				<img class="card-logo" src="assets/logos/ces.png" alt="Community Exchange System logo">
 				<h4 translate="no">Community Exchange System</h4>
-				<p>Founded in 2003, CES is the oldest and largest of the three organisations. Its current software is tried and tested — the new CEN platform will carry that experience forward for a mobile-first generation.</p>
+				<p>Founded in 2003, CES is the oldest and largest of the four organisations. Its current software is tried and tested — the new CEN platform will carry that experience forward for a mobile-first generation.</p>
 				<a class="card-cta" href="https://www.community-exchange.org/home/join/" target="_blank" rel="noopener noreferrer">Sign up</a>
 			</div>
 			<div class="card">
