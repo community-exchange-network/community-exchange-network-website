@@ -602,6 +602,13 @@ footer .heart {
 	border-color: var(--sky-deep);
 }
 .newsletter-form button { font: inherit; cursor: pointer; }
+/* Replace English flag image in GTranslate with Union Jack */
+.gtranslate_wrapper img[alt="en"],
+.gtranslate_wrapper img[alt="English"] {
+  content: url("https://flagcdn.com/w40/gb.png") !important;
+  width: 24px !important;
+  height: auto !important;
+}
 </style>
 <!-- Matomo analytics -->
 <script>
@@ -628,8 +635,7 @@ footer .heart {
     "languages": ["en", "es", "fr", "de", "el", "it", "zh-CN", "zh-TW", "ja", "fi", "ro"],
     "wrapper_selector": ".gtranslate_wrapper",
     "switcher_horizontal_position": "right",
-    "switcher_vertical_position": "bottom",
-    "alt_flags": { "en": "united-kingdom" }
+    "switcher_vertical_position": "bottom"
   };
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
