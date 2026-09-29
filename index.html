@@ -623,12 +623,12 @@ footer .heart {
 <!-- GTranslate Widget Start -->
 <div class="gtranslate_wrapper"></div>
 <script>
-  // Wait for GTranslate to inject its HTML, then fix the English flag URL
   window.addEventListener('load', function() {
     setTimeout(function() {
       var enFlags = document.querySelectorAll('.gtranslate_wrapper img[alt="en"], .gtranslate_wrapper img[alt="English"]');
       enFlags.forEach(function(img) {
-        img.src = 'https://flagcdn.com/w40/gb.png';
+        // Use GTranslate's native 24px icon asset URL
+        img.src = 'https://cdn.gtranslate.net/flags/24/en-uk.png';
       });
     }, 500);
   });
