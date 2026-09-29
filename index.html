@@ -621,28 +621,18 @@ footer .heart {
 </head>
 <body>
 <!-- GTranslate Widget Start -->
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 <div class="gtranslate_wrapper"></div>
-<script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      var enFlags = document.querySelectorAll('.gtranslate_wrapper img[alt="en"], .gtranslate_wrapper img[alt="English"]');
-      enFlags.forEach(function(img) {
-        // Use GTranslate's native 24px icon asset URL
-        img.src = 'https://cdn.gtranslate.net/flags/24/en-uk.png';
-      });
-    }, 500);
-  });
-</script>
 <script>
   window.gtranslateSettings = {
     "default_language": "en",
     "languages": ["en", "es", "fr", "de", "el", "it", "zh-CN", "zh-TW", "ja", "fi", "ro"],
     "wrapper_selector": ".gtranslate_wrapper",
     "switcher_horizontal_position": "right",
-    "switcher_vertical_position": "bottom"
+    "switcher_vertical_position": "bottom",
+    "alt_flags": { "en": "usa" }
   };
 </script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 <!-- GTranslate Widget End -->
 <header>
 	<div class="wrap nav-row">
